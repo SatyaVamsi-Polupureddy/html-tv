@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/location.css"/>
+  <title>Geo-Location</title>
+</head>
+<body>
+  <nav> 
+      <div class="logo-container"> 
+        <img src="images/logo.jpg" alt="Logo of our practise site" class="logo"/> 
+      </div> 
+      <ul class="nav-items"> 
+        <li><a href="contact.html">Contact</a></li> 
+        <li><a href="about.html">About</a></li> 
+        <li><a href="help.html">Help</a></li> 
+      </ul> 
+    </nav> 
+    <hr class="divider">
+  <main>
+    <details>
+      <summary>Show Geo-Location</summary>
+      <div class="location-container">
+        <button onclick="getLocation()">Get Location</button>
+        <p id="location"></p>
+      </div>
+    </details>
+
+    <aside> 
+        <a href="tables.html" >Tables</a> 
+        <a href="forms.html" class="active">Forms</a> 
+        <a href="location.html">Geo-Location</a> 
+        <a href="draganddrop.html">Drag and Drop</a> 
+    </aside> 
+    
+  </main>
+  <script>
+    const getLocation=()=>{
+      var x=document.getElementById("location");
+      if(navigator.getLocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+        function showPosition(position){
+          x.innerHTML="Latitude: "+position.coords.latitude+"<br>Longitude: "+position.coords.longitude;
+        }
+      }
+      else{
+        x.innerHTML="Geolocation is not supported by this browser.";
+      }
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/draganddrop.css"/>
+  <title>Drag and Drop</title>
+</head>
+<body>
+  <nav> 
+      <div class="logo-container"> 
+        <img src="images/logo.jpg" alt="Logo of our practise site" class="logo"/> 
+      </div> 
+      <ul class="nav-items"> 
+        <li><a href="contact.html">Contact</a></li> 
+        <li><a href="about.html">About</a></li> 
+        <li><a href="help.html">Help</a></li> 
+      </ul> 
+    </nav> 
+    <hr class="divider">
+  <main>
+    <details>
+      <summary>Drag and Drop</summary>
+      <div class="drag-container">
+        <img src="./bg-person.jpg" alt="Draggable Image" id="draggable-image" draggable="true" ondragstart="dragStart(event)"/>
+        <div class="dropzone" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+          Drop Here
+        </div>
+      </div>
+      
+    </details>
+
+    <aside> 
+        <a href="tables.html" >Tables</a> 
+        <a href="forms.html" class="active">Forms</a> 
+        <a href="location.html">Geo-Location</a> 
+        <a href="draganddrop.html">Drag and Drop</a> 
+    </aside> 
+    
+  </main>
+
+  <script>
+    const dragStart=(event)=>{
+      event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
+    const onDragOver=(event)=>{
+      event.preventDefault();
+    }
+
+    const onDrop=(event)=>{
+      event.preventDefault();
+      const id=event.dataTransfer.getData("text");
+      const draggableElement=document.getElementById(id);
+      event.target.appendChild(draggableElement);
+      event.dataTransfer.clearData();
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <style>
+    *{
+  padding: 0;
+  margin:0;
+}
+
+body{
+  background-color: rgb(241, 240, 240);
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+}
+
+nav{ 
+  width:100%; 
+  height:5%; 
+  display:flex; 
+  align-items: center; 
+  justify-content:space-between; 
+  padding:20px; 
+  filter: blur(0.1px);
+  font-size: larger;
+} 
+
+
+.nav-items{ width:40%; list-style-type:none; display:flex; gap:5em; /* justify-content: space-around; */ align-items: center; } 
+
+.nav-items a{ text-decoration: none; color:black; } 
+
+.nav-items a:hover{ color: #131212af; } 
+
+.logo-container{ width:30%; } 
+
+.logo{ height:3em; width:3em; border-radius: 50%; } 
+
+.active-nav{ color: #131212af; font-weight: bold; }
+
+.divider{
+  border: 0.3px solid rgb(95, 94, 94);
+  margin: 0.3em;
+}
+
+main{ display:flex; 
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: flex-start;
+  height:90%;
+  width:100%;
+  padding:0em 3em;
+  /* gap:0.2em; */
+} 
+
+address{
+  display:flex;
+  flex-direction: column;
+  gap:0.5em;
+}
+
+address ul{
+  list-style-type: none;
+  display:flex;
+  flex-direction: column;
+  gap:0.5em;
+}
+
+ul a{
+  text-decoration: none;
+  color: black;
+}
+  </style>
+</head>
+<body>
+  <nav> 
+      <div class="logo-container"> 
+        <img src="images/logo.jpg" alt="Logo of our practise site" class="logo"/> 
+      </div> 
+      <ul class="nav-items"> 
+        <li><a href="contact.html" class="active-nav">Contact</a></li> 
+        <li><a href="about.html">About</a></li> 
+        <li><a href="help.html">Help</a></li> 
+      </ul> 
+    </nav> 
+    <hr class="divider">
+  <main>
+    <address>
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out to us through any of the following methods:</p>
+      <ul>
+        <li>Address: 123 Main St, Anytown, USA</li>
+      <li><a href="tel:+911234567890">+91 1234567890</a></li>
+      <li><a href="mailto:xyz@gamil.com">xyz@gmail.com</a></li>
+      </ul>
+    </address>
+  </main>
+</body>
+</html>
